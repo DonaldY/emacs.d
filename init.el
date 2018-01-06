@@ -2,32 +2,25 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
-;; 快速打开配置文件
 (defun open-init-file()
   (interactive)
   (find-file "~/.emacs.d/init.el"))
 
-;; 插件管理
-;; -----------------------------------------------------------------
+
+;; add more personal func
+;; new init-func.el 
+
+;; (require 'init-func.el)
 (require 'init-packages)
-
-;; 视觉层配置
-;; -----------------------------------------------------------------
 (require 'init-ui)
-
-;; 增强内置功能
-;; -----------------------------------------------------------------
 (require 'init-better-defaults)
-
-;; 快捷键绑定
-;; -----------------------------------------------------------------
 (require 'init-keybindings)
 
-;; Org 模式相关的全部设定
-;; -----------------------------------------------------------------
+
+(setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
+(load-file custom-file)
+
+;; add extend
 (require 'org)
-
-
-
-
-
+(require 'hungry-delete)
+(require 'smartparens-config)

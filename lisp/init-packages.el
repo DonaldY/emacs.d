@@ -10,35 +10,27 @@
      (setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
                       ("melpa" . "http://elpa.emacs-china.org/melpa/"))))
 
-;; 注意 elpa.emacs-china.org 是 Emacs China 中文社区在国内搭建的一个 ELPA 镜像
-
  ;; cl - Common Lisp Extension
  (require 'cl)
 
  ;; Add Packages
  (defvar my/packages '(
-                ;; --- Auto-completion ---
                 company
-                ;; --- Better Editor ---
                 hungry-delete
                 swiper
                 counsel
                 smartparens
-                ;; --- Major Mode ---
                 js2-mode
-                ;; --- Minor Mode ---
                 nodejs-repl
                 exec-path-from-shell
-                ;; --- Themes ---
                 monokai-theme
-                ;; solarized-theme
                 ) "Default packages")
 
  (setq package-selected-packages my/packages)
 
  (defun my/packages-installed-p ()
      (loop for pkg in my/packages
-           when (not (package-installed-p pkg)) do (return nil)
+           when (not (package-installed-p pkg)) do (return nil)     
            finally (return t)))
 
  (unless (my/packages-installed-p)
@@ -55,17 +47,17 @@
 
 ;; 最近打开过文件的选项
 (require 'recentf)
-(recentf-mode 1)
-(setq recentf-max-menu-item 10)
 
 ;; 打开加载主题
-(load-theme 'monokai t)
+(load-theme 'monokai 1)               
 
 ;; 高亮当前行
-(global-hl-line-mode t)
+(global-hl-line-mode 1)
 
 ;; 开启全局 Company补全
-(global-company-mode t)
+(global-company-mode 1)
+
+(global-hungry-delete-mode t)
 
 ;; 模式匹配
 (setq auto-mode-alist
@@ -73,7 +65,13 @@
        '(("\\.js\\'" . js2-mode))
        auto-mode-alist))
 
+;; Swiper
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(setq enable-recursive-minibuffers t)
 
+;; Smartparens
+(smartparens-global-mode t)
 
 ;; 文件末尾
 (provide 'init-packages)
