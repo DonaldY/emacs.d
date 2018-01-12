@@ -9,7 +9,7 @@
 (global-set-key (kbd "C-h C-v") 'find-variable)
 (global-set-key (kbd "C-h C-k") 'find-function-on-key)
 
-;; 设置 org-agenda 打开快捷键
+;; Agenda
 (global-set-key (kbd "C-c a") 'org-agenda)
 
 ;; Hippie 补全

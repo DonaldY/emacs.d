@@ -4,20 +4,23 @@
 (global-auto-revert-mode 1)
 
 ;; 行号
-(global-linum-mode 1)
+(global-linum-mode t)
 
 ;; 禁止自动备份
 (setq make-backup-files nil)
+
+;; 禁止自动恢复
+(setq auto-save-default nil)
+
+;; 最近文件
+(recentf-mode 1)
+(setq recentf-max-menu-item 25)
 
 ;; 删除/替换 选中字符
 (delete-selection-mode 1)
 
 ;; 只输入 (y or n) 
 (fset 'yes-or-no-p 'y-or-n-p)
-
-;; 最近文件
-(recentf-mode 1)
-(setq recentf-max-menu-item 25)
 
 ;; 括号对齐
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)

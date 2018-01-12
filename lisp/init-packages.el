@@ -46,7 +46,6 @@
    (exec-path-from-shell-initialize))
 
 
-(require 'smartparens-config)
 ;; (add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
 (smartparens-global-mode t)
 
@@ -55,9 +54,6 @@
 
 ;; 打开加载主题
 (load-theme 'monokai t)
-
-;; 高亮当前行
-(global-hl-line-mode t)
 
 ;; 开启全局 Company补全
 (global-company-mode t)

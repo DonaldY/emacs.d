@@ -4,14 +4,17 @@
 ;; 关闭文件滑动控件
 (scroll-bar-mode -1)
 
+;; 启动屏幕，欢迎界面
+(setq inhibit-splash-screen t)
+
 ;; 显示行号
 (global-linum-mode 1)
 
+;; 高亮当前行
+(global-hl-line-mode t)
+
 ;; 更改光标的样式
 (setq-default cursor-type 'bar)
-
-;; 关闭启动帮助画面
-(setq inhibit-splash-screen 1)
 
 ;; 更改显示字体大小 12pt
 (set-face-attribute 'default nil :height 120)

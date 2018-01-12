@@ -15,17 +15,11 @@
 (require 'init-ui)
 (require 'init-better-defaults)
 (require 'init-keybindings)
+(require 'init-org)
 
 
 (setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
 (load-file custom-file)
 
 ;; add extend
-(require 'org)
-(require 'hungry-delete)
-
-
-
-(setq org-agenda-files '("~/org"))
-
 
