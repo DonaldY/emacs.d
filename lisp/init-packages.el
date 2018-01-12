@@ -24,6 +24,7 @@
                 nodejs-repl
                 exec-path-from-shell
                 monokai-theme
+		popwin
                 ) "Default packages")
 
  (setq package-selected-packages my/packages)
@@ -45,19 +46,28 @@
    (exec-path-from-shell-initialize))
 
 
+(require 'smartparens-config)
+;; (add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
+(smartparens-global-mode t)
+
 ;; 最近打开过文件的选项
 (require 'recentf)
 
 ;; 打开加载主题
-(load-theme 'monokai 1)               
+(load-theme 'monokai t)
 
 ;; 高亮当前行
-(global-hl-line-mode 1)
+(global-hl-line-mode t)
 
 ;; 开启全局 Company补全
-(global-company-mode 1)
+(global-company-mode t)
 
-(global-hungry-delete-mode t)
+(global-hungry-delete-mode)
+
+;; Swiper
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(setq enable-recursive-minibuffers t)
 
 ;; 模式匹配
 (setq auto-mode-alist
@@ -65,13 +75,8 @@
        '(("\\.js\\'" . js2-mode))
        auto-mode-alist))
 
-;; Swiper
-(ivy-mode 1)
-(setq ivy-use-virtual-buffers t)
-(setq enable-recursive-minibuffers t)
-
-;; Smartparens
-(smartparens-global-mode t)
+(require 'popwin)
+(popwin-mode t)
 
 ;; 文件末尾
 (provide 'init-packages)

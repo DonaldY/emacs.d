@@ -23,7 +23,9 @@
 ;; add extend
 (require 'org)
 (require 'hungry-delete)
-(require 'smartparens-config)
+
+
 
 (setq org-agenda-files '("~/org"))
+
 
