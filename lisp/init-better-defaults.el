@@ -42,6 +42,27 @@
 	(indent-buffer)
         (message "Indent buffer.")))))
 
+;; hippie expend is dabbrev expand on steroids
+(setq hippie-expand-try-function-list '(try-expand-debbrev
+                                        try-expand-debbrev-all-buffers
+                                        try-expand-debbrev-from-kill
+                                        try-complete-file-name-partially
+                                        try-complete-file-name
+                                        try-expand-all-abbrevs
+                                        try-expand-list
+                                        try-expand-line
+                                        try-complete-lisp-symbol-partially
+                                        try-complete-lisp-symbol))
+
+;; 删除文件操作时询问
+(setq dired-recursive-deletes 'always)
+(setq dired-recursive-copies 'always)
+
+;; 重用唯一的一个缓冲区作为 Dired Mode 显示专用缓冲区
+(put 'dired-find-alternate-file 'disabled nil)
+
+;; dired C-x C-j 直接进入当前目录
+(require 'dired-x)
 
 ;; 关闭文件
 (provide 'init-better-defaults)

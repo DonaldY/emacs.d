@@ -12,7 +12,7 @@
 ;; Agenda
 (global-set-key (kbd "C-c a") 'org-agenda)
 
-;; Hippie 补全
+;; Hippie 补全 (windows, "M-s M-/ M-/")
 (global-set-key (kbd "s-/") 'hippie-expand)
 
 ;; format
@@ -25,6 +25,10 @@
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "C-h v") 'counsel-describe-variable)
 (global-set-key (kbd "C-h v") 'counsel-find-library)
+
+;; 延迟加载
+(with-eval-after-load 'dired
+    (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
 
 ;; 文件关闭
 (provide 'init-keybindings)
