@@ -30,6 +30,14 @@
 (with-eval-after-load 'dired
     (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
 
+;; dwim 
+(global-set-key (kbd "M-s o") 'occur-dwim)
+
+;; imenu
+(global-set-key (kbd "M-s i") 'counsel-imenu)
+
+;; expand-region
+(global-set-key (kbd "C-=") 'er/expand-region)
+
 ;; 文件关闭
 (provide 'init-keybindings)
-

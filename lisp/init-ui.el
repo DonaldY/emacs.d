@@ -15,9 +15,5 @@
 
 ;; 更改光标的样式
 (setq-default cursor-type 'bar)
-
-;; 更改显示字体大小 12pt
-(set-face-attribute 'default nil :height 120)
-
 ;; 文件末尾
 (provide 'init-ui)

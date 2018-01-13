@@ -22,6 +22,14 @@
 ;; 只输入 (y or n) 
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; 高亮括号
+(define-advice show-paren-function (:around (fn) fix-show-paren-function)
+  "Highlight enclosing parens."
+  (cond ((looking-at-p "\\s(") (funcall fn))
+        (t (save-excursion
+             (ignore-errors (backward-up-list))
+             (funcall fn)))))
+
 ;; 括号对齐
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 
@@ -63,6 +71,20 @@
 
 ;; dired C-x C-j 直接进入当前目录
 (require 'dired-x)
+
+;; dwin = do what i mea
+(defun occur-dwim ()
+  "Call `occur' with a sane default."
+  (interactive)
+  (push (if (region-active-p)
+            (buffer-substring-no-properties
+             (region-beginning)
+             (region-end))
+          (let ((sym (thing-at-point 'symbol)))
+            (when (stringp sym)
+              (regexp-quote sym))))
+        regexp-history)
+  (call-interactively 'occur))
 
 ;; 关闭文件
 (provide 'init-better-defaults)
