@@ -22,3 +22,5 @@
 (load-file custom-file)
 
 ;; add extend
+(require 'init-markdown)
+(require 'init-fonts)

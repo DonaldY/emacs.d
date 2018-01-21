@@ -15,5 +15,14 @@
 
 ;; 更改光标的样式
 (setq-default cursor-type 'bar)
+
+;; powerline
+(add-to-list 'load-path "~/.emacs.d/powerline/")
+(require 'powerline)
+(setq powerline-arrow-shape 'arrow) ;; the default
+(custom-set-faces
+ '(mode-line ((t (:foreground "#030303" :background "#bdbdbd" :box nil))))
+ '(mode-line-inactive ((t (:foreground "#f9f9f9" :background "#666666" :box nil)))))
+
 ;; 文件末尾
 (provide 'init-ui)

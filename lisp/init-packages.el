@@ -24,6 +24,7 @@
 		      nodejs-repl
 		      exec-path-from-shell
 		      monokai-theme
+		      color-theme
 		      popwin
 		      web-mode
 		      js2-refactor
@@ -75,7 +76,9 @@
 (setq auto-mode-alist
       (append
        '(("\\.js\\'" . js2-mode)
-	 ("\\.html\\'". web-mode))
+	 ("\\.html\\'". web-mode)
+	 ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
        auto-mode-alist))
 
 (require 'popwin)
