@@ -86,5 +86,7 @@
         regexp-history)
   (call-interactively 'occur))
 
-;; 关闭文件
+;; 设置环境编码
+;; (set-language-environment "UTF-8")
+
 (provide 'init-better-defaults)

@@ -26,7 +26,7 @@
 (global-set-key (kbd "C-h v") 'counsel-describe-variable)
 (global-set-key (kbd "C-h v") 'counsel-find-library)
 
-;; 延迟加载
+;; eval after load
 (with-eval-after-load 'dired
     (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
 
@@ -38,6 +38,23 @@
 
 ;; expand-region
 (global-set-key (kbd "C-=") 'er/expand-region)
+
+;; org
+;; r aka remeber
+(global-set-key (kbd "C-c r") 'org-capture)
+
+
+(global-set-key (kbd "C-c t i") 'my-toggle-web-indent)
+
+(js2r-add-keybindings-with-prefix "C-c C-m")
+
+;; company remap M-
+(with-eval-after-load 'company
+  (define-key company-active-map (kbd "M-n") nil)
+  (define-key company-active-map (kbd "M-p") nil)
+  (define-key company-active-map (kbd "C-n") #'company-select-next)
+  (define-key company-active-map (kbd "C-p") #'company-select-previous))
+
 
 ;; 文件关闭
 (provide 'init-keybindings)
