@@ -1,6 +1,0 @@
-* 工作安排
-
-** TODO [#B] 学习Emacs
-
-** TODO [#B] Clean up our Emacs configs
-
