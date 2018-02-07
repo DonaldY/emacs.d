@@ -24,7 +24,11 @@
 	   :empty-lines 1)
 	  ("j" "Journal Entry" entry (file+datetree "C:/Users/donal/Desktop/Donald Yang/journal.org")
 	   "* %?"
-	   :empty-lines 1)))
+	   :empty-lines 1)
+	  ("h" "home" entry (file+headline "C:/Users/donal/Desktop/Donald Yang/home.org" "Home notes")
+	   "* TODO [#B] %?\n  %i\n %U"
+	   :empty-lines 1)
+	  ))
   )
 
 (setq org-tag-alist '(("WORK" . ?w)

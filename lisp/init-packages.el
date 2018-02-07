@@ -30,6 +30,7 @@
 		      js2-refactor
 		      expand-region
 		      iedit
+		      cnfonts
 		      ) "Default packages")
 
 (setq package-selected-packages my/packages)
