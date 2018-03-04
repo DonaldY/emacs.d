@@ -8,7 +8,7 @@
 (setq inhibit-splash-screen t)
 
 ;; 显示行号
-(global-linum-mode 1)
+(global-linum-mode t)
 
 ;; 高亮当前行
 (global-hl-line-mode t)

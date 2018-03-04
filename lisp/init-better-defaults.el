@@ -3,9 +3,6 @@
 
 (global-auto-revert-mode 1)
 
-;; 行号
-(global-linum-mode t)
-
 ;; 禁止自动备份
 (setq make-backup-files nil)
 
